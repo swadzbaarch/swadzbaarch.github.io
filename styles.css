@@ -82,3 +82,62 @@ h2{font-size:clamp(42px,5vw,72px)}
   html{scroll-behavior:auto}
   *{transition:none!important}
 }
+
+
+.lightbox-prev,
+.lightbox-next{
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 50%;
+  background: rgba(0,0,0,.2);
+  color: #fff;
+  font: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
+.lightbox-prev{left: 24px}
+.lightbox-next{right: 24px}
+.lightbox-prev:hover,
+.lightbox-next:hover{background: rgba(0,0,0,.35)}
+.lightbox figcaption{
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+}
+@media (max-width: 700px){
+  .lightbox-prev,
+  .lightbox-next{
+    width:44px;
+    height:44px;
+    top:auto;
+    bottom:24px;
+    transform:none;
+  }
+  .lightbox-prev{left:24px}
+  .lightbox-next{right:24px}
+}
+
+
+/* KOK — galeria przewijana bez powiększenia */
+.project-slider{position:relative;overflow:hidden;width:100%}
+.slider-track{position:relative;width:100%;aspect-ratio:2.05/1;overflow:hidden;background:#e9e8e4}
+.slider-track img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease}
+.slider-track img:first-child{opacity:1}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;border:1px solid rgba(255,255,255,.75);border-radius:50%;background:rgba(20,20,20,.28);color:#fff;display:grid;place-items:center;font-size:20px;line-height:1;cursor:pointer;opacity:0;transition:opacity .2s,background .2s}
+.slider-prev{left:18px}
+.slider-next{right:18px}
+.project-slider:hover .slider-arrow,.project-slider:focus-within .slider-arrow{opacity:1}
+.slider-arrow:hover,.slider-arrow:focus-visible{background:rgba(20,20,20,.55)}
+.slider-counter{position:absolute;right:18px;bottom:16px;z-index:2;padding:7px 10px;background:rgba(255,255,255,.88);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#222}
+@media (max-width:800px){
+  .slider-track{aspect-ratio:16/10}
+  .slider-arrow{opacity:1;width:40px;height:40px}
+  .slider-prev{left:12px}
+  .slider-next{right:12px}
+  .slider-counter{right:12px;bottom:12px}
+}

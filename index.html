@@ -59,51 +59,50 @@
 
       <div class="project-grid">
         <article class="project project-large">
-          <button class="project-image-button" data-lightbox="assets/kok-tyl3.webp" data-title="KOK — wizualizacja">
-            <img src="assets/kok-tyl3.webp" alt="KOK — wizualizacja budynku i zielonego otoczenia" loading="lazy">
-            <span class="zoom">+</span>
-          </button>
+          <div class="project-slider" data-slider>
+            <button class="slider-arrow slider-prev" type="button" aria-label="Poprzednie zdjęcie KOK">←</button>
+            <div class="slider-track">
+              <img src="assets/kok-tyl3.webp" alt="KOK — widok zewnętrzny" loading="lazy" data-slide>
+              <img src="assets/kok-18-gallery.webp" alt="KOK — widok zewnętrzny od strony ulicy" loading="lazy" data-slide>
+              <img src="assets/kok-hol18.webp" alt="KOK — hol" loading="lazy" data-slide>
+              <img src="assets/kok-sala6.webp" alt="KOK — sala" loading="lazy" data-slide>
+            </div>
+            <button class="slider-arrow slider-next" type="button" aria-label="Następne zdjęcie KOK">→</button>
+            <div class="slider-counter" aria-live="polite">1 / 4</div>
+          </div>
           <div class="project-meta"><span>KOK</span><span>01 / 06</span></div>
         </article>
 
         <article class="project">
-          <button class="project-image-button" data-lightbox="assets/kok-18.webp" data-title="KOK — elewacja">
-            <img src="assets/kok-18.webp" alt="KOK — wizualizacja elewacji budynku" loading="lazy">
-            <span class="zoom">+</span>
-          </button>
-          <div class="project-meta"><span>KOK</span><span>02 / 06</span></div>
-        </article>
-
-        <article class="project">
-          <button class="project-image-button" data-lightbox="assets/projekt-01.webp" data-title="Projekt 01">
+          <button class="project-image-button" data-gallery="assets/projekt-01.webp" data-titles="Projekt 01">
             <img src="assets/projekt-01.webp" alt="Wizualizacja domu z drewnianą elewacją" loading="lazy">
             <span class="zoom">+</span>
           </button>
-          <div class="project-meta"><span>Projekt 01</span><span>03 / 06</span></div>
+          <div class="project-meta"><span>Projekt 01</span><span>02 / 05</span></div>
         </article>
 
         <article class="project project-wide">
-          <button class="project-image-button" data-lightbox="assets/projekt-02.webp" data-title="Projekt 02">
+          <button class="project-image-button" data-gallery="assets/projekt-02.webp" data-titles="Projekt 02">
             <img src="assets/projekt-02.webp" alt="Wizualizacja zespołu budynków w zielonym otoczeniu" loading="lazy">
             <span class="zoom">+</span>
           </button>
-          <div class="project-meta"><span>Projekt 02</span><span>04 / 06</span></div>
+          <div class="project-meta"><span>Projekt 02</span><span>03 / 05</span></div>
         </article>
 
         <article class="project">
-          <button class="project-image-button" data-lightbox="assets/projekt-03.webp" data-title="Projekt 03">
+          <button class="project-image-button" data-gallery="assets/projekt-03.webp" data-titles="Projekt 03">
             <img src="assets/projekt-03.webp" alt="Wizualizacja współczesnego zespołu budynków" loading="lazy">
             <span class="zoom">+</span>
           </button>
-          <div class="project-meta"><span>Projekt 03</span><span>05 / 06</span></div>
+          <div class="project-meta"><span>Projekt 03</span><span>04 / 05</span></div>
         </article>
 
         <article class="project">
-          <button class="project-image-button" data-lightbox="assets/projekt-04.webp" data-title="Projekt 04">
+          <button class="project-image-button" data-gallery="assets/projekt-04.webp" data-titles="Projekt 04">
             <img src="assets/projekt-04.webp" alt="Wizualizacja budynku w deszczowym krajobrazie" loading="lazy">
             <span class="zoom">+</span>
           </button>
-          <div class="project-meta"><span>Projekt 04</span><span>06 / 06</span></div>
+          <div class="project-meta"><span>Projekt 04</span><span>05 / 05</span></div>
         </article>
       </div>
     </section>
@@ -138,12 +137,17 @@
     <a href="#top">Do góry ↑</a>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Podgląd projektu">
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galeria projektu">
     <button class="lightbox-close" id="lightboxClose" aria-label="Zamknij podgląd">×</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Poprzednie zdjęcie">←</button>
     <figure>
       <img id="lightboxImage" src="" alt="">
-      <figcaption id="lightboxCaption"></figcaption>
+      <figcaption>
+        <span id="lightboxCaption"></span>
+        <span id="lightboxCounter" aria-live="polite"></span>
+      </figcaption>
     </figure>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Następne zdjęcie">→</button>
   </div>
 
   <script src="script.js" defer></script>
